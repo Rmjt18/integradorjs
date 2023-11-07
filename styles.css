@@ -84,7 +84,7 @@ header{
 }
 
 .slider-frame img {
-	width: %;
+	width: 100%;
     height: 100%;
 
 }
@@ -128,6 +128,13 @@ header{
 
     /* --------------------------------------------contactanos --------------*/
 
+#contacto{
+width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
     .container-form{
     width: 100%;
     max-width: 1200px;
@@ -192,5 +199,13 @@ header{
     width:50%;
     border-radius: 20px;
     
+}
+
+#footer{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
