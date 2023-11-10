@@ -28,7 +28,7 @@ header{
         gap: 8rem;
         font-size: 25px;
         font-weight: 900;
-        color:rgb(1, 1, 43);
+        color:rgb(213, 213, 230);
     
         
     }
@@ -39,7 +39,7 @@ header{
     }
 
     .logo img{
-        width:60%;
+        width:50%;
         border-radius: 20px;
         cursor: pointer;
         transition: all 0, 3s;
@@ -51,17 +51,6 @@ header{
     .logo:hover {
         transform: scale(1.2);
     }
-
-#hero{
-    
-    width: 100%;
-    max-width: 1200px;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    
-
-}
 
 .slider-frame {
 	width: 1280px;
@@ -103,6 +92,16 @@ header{
 	100% {margin-left: -300%;}
 }
 
+#nosotros{
+
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+
+}
+
 
     /* .slider{
         width: 100%;
@@ -128,13 +127,15 @@ header{
 
     /* --------------------------------------------contactanos --------------*/
 
+
 #contacto{
-width: 100%;
+    width: 100%;
     max-width: 1200px;
     margin: auto;
     display: flex;
     flex-direction: column;
 }
+
     .container-form{
     width: 100%;
     max-width: 1200px;
@@ -201,11 +202,38 @@ width: 100%;
     
 }
 
-#footer{
+footer{
     width: 100%;
-    max-width: 1200px;
-    margin: auto;
+    padding: 10px;
+    gap: 2rem;
+    /* background-color: var(--background); */
+    background: linear-gradient(to bottom, rgb(5, 5, 87) ,skyblue  );
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+footer ul{
+    color: yellow;
+    font-size: 20px;
+    cursor: pointer;
 }
 
+footer ul:hover {
+    transform: scale(1.2);
+    transition: all 0, 3s;
+}
+
+footer img{
+    
+    width: 100px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+footer img:hover {
+    transform: scale(1.2);
+    transition: all 0, 3s;
+}
