@@ -47,7 +47,7 @@
             Realizamos educación obesológica con técnicas efectivas para cambiar hábitos y conductas. Nuestros programas son personalizados y trabajamos de manera transdisciplinaria para atender todas las necesidades de nuestros pacientes. Nuestra especialización y amplia trayectoria nos permiten brindar atención integral y de excelencia.
 
         </p>
-        <div class="buttons">
+        <div class="button">
             
         <br><br>
         <a href="https://cormillot.com/">Learn More</a>
@@ -63,18 +63,22 @@
         </section>
 
 <br><br><br>
+
         <section id="tratamientos">
             <h1>Te presentamos a nuestros tratamientos de Consultorios Externos</h1>
+            <div class="categories">
+                <button class="category active">Todos 👨🏽‍👩🏾‍👧🏻‍👦</button>
+                <button class="category" data-category="Presencial">Presencial  🧑🏾‍🤝‍🧑</button>
+                <button class="category" data-category="virtual">Virtual 👩‍💻🧑‍💻</button>
+                <button class="category" data-category="mixto">Mixto 👩‍💻🙋‍♂️</button>
 
-            <ul class="tratamientos-link">
-                <li><a href="/img/presencial a.jpeg">Presenciales  🧑🏾‍🤝‍🧑</a></li>
-                <li><a href="/img/online b.jpeg">Virtuales 👩‍💻🧑‍💻</a></li>
-                <li><a href="/img/semipresencial b.jpeg">Mixtos 👩‍💻🙋‍♂️</a></li>
+            </div>
                 
-            </ul>
+            
+            <div class="container-tratamientos" >
 
-
-            <div class="container-tratamientos" ></div>
+            </div>
+            <button class="btn-load"> Ver mas</button>
         </section>
         <section id="contacto">
             <div class="container-form">
@@ -103,13 +107,15 @@
         </section>
         <br>
     </main>
-    <script src= "main.js"> </script>
+    
     <footer id="footer">
         <img src="/img/adro.jpg" alt="Adrian">
         <ul>Trabaja con nosotros</ul>
         <ul>Terminos y condiciones</ul>
         <img src="img/drcormi.jpg" alt="Alberto">
     </footer>
-
+    <div class="add-modal"></div>
+    <script src= "data.js"> </script>
+    <script src="index.js"></script>
 </body>
 </html>
