@@ -71,8 +71,8 @@ header{
     display: flex; 
     align-items: center;
     justify-content: center;
-    /* overflow: scroll; */
-    /* scroll-snap-type: x mandatory; */
+    /* overflow: scroll; */ */
+    /* scroll-snap-type: x mandatory; */ */
 
 }
 .slider img{
@@ -125,6 +125,8 @@ border-radius: 5px;
     -ms-border-radius: 5%;
     -o-border-radius: 5%; */
 } 
+
+
 .nosotros-card img:hover {
     transform: scale(1.2);
     transition: all 0, 3s;
