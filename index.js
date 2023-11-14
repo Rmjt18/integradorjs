@@ -7,28 +7,21 @@ const tratamientoscontainer= document.querySelector(".tratamientos-container");
 
 
 const createtratamientotemplate=  (tratamiento) => {
-const {id, name, price, consultas, img} = tratamiento;
-    return`  <div class="pokemon">
-    <img src="${img}" alt="ivysaur">
-    <div class="pokemon__info">
-        <div class="pokemon__info--top">
-            <h3>${name}</h3>
+const {id, name, price, prestaciones, consultas, img,} = tratamiento;
+
+    return`  <div class="tratamiento-card">
+    <h3 class="title">${name}</h3>
+    <img src="${img}" alt="img">
+    <div class="tratamiento__info">
+        <div class="tratamiento__info--top">
+            <span>📍$${price} Pesos Argentinos</span> 
+            <span> 📌# de Consultas:${consultas}</span>  
         </div>
-        <div class="pokemon__info--mid">
-            <div class="pokemon__info--mid--type">
-                <img src="img/tipoplanta.jpeg" alt="tipoplanta">
-                <span>${price}</span>
+        <div class="tratamiento__info--mid">
+            <span>📌Prestaciones:${prestaciones}</span>
             </div>
-            </div>
-            <div class="pokemon__info--down">
-                <p>Fuerte contra - tipo Agua 💪<br>
-                Debil contra - tipo fuego 😵‍💫</p>
-            </div>
-            
     </div>
-    
-    <div> <a class="btn" href="#"> Evolucionar</a></div>
-    
+
 </div>`
     
 
