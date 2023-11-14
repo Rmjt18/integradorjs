@@ -147,18 +147,20 @@ border-radius: 5px;
 }
 
 #tratamientos{
+    
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 100%;
     max-width: 1200px;
+    margin: auto;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 2rem;
-
+    gap: 3rem;
 }
 #tratamientos h1{
     justify-content: center;
+    align-items: center;
     font-size: 50px;
 }
 .categories{
@@ -202,7 +204,7 @@ border-radius: 5px;
 
 .tratamientos-container{
     max-width: 1200px;
-    gap: 1rem;
+    gap: 3rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -215,30 +217,36 @@ border-radius: 5px;
 }
 
 .tratamiento-card{
-    background: grey;
+    font-size: 25px;
+    gap: 2rem;
+    background: linear-gradient(to bottom ,skyblue, rgb(5, 5, 87)  );
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
-    border-radius: 15px ;
-    gap: 1rem;
+    padding: 5px;
+    border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -ms-border-radius: 10px ;
+    -o-border-radius: 10px ;
 }
 
 .tratamiento-card img{
+    border: 5px solid rgb(15, 15, 94);
     width: 200px;
-    gap: 20rem;
     border-radius: 15px;
+
 }
 .tratamiento__info{
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    width: 100%;
+    gap: 1rem;
+    /* width: 100%; */
 }
 .tratamiento__info--top, .tratamiento__info--mid{ 
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }

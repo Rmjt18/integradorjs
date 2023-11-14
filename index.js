@@ -15,10 +15,10 @@ const {id, name, price, prestaciones, consultas, img,} = tratamiento;
     <div class="tratamiento__info">
         <div class="tratamiento__info--top">
             <span>📍$${price} Pesos Argentinos</span> 
-            <span> 📌# de Consultas:${consultas}</span>  
+            <span> 📌# de Consultas: ${consultas}</span>  
         </div>
         <div class="tratamiento__info--mid">
-            <span>📌Prestaciones:${prestaciones}</span>
+            <span>📌Prestaciones: ${prestaciones}</span>
             </div>
     </div>
 
