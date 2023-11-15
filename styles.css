@@ -131,7 +131,47 @@ border-radius: 5px;
     transform: scale(1.2);
     transition: all 0, 3s;
 }
+.info-container{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    gap: 3rem;
 
+
+}
+
+.container--card{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background: rgb(105, 166, 192);
+    padding:25px;
+    height: 600;
+    border-radius: 15px;
+    gap: 1rem;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.container--card img{
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    border: 5px solid rgb(15, 15, 94);
+
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    -ms-border-radius: 25px;
+    -o-border-radius: 25px;
+}
 
 
 .button{
