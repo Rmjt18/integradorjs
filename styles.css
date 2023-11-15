@@ -255,6 +255,26 @@ border-radius: 5px;
     display: none;
 }
 
+.categories {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.category {
+    background: var(--btn-bg);
+    border: none;
+    padding: 10px 15px;
+    color: var(--bg-white);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.active {
+    background: linear-gradient(to bottom ,skyblue, rgb(5, 5, 87)  );
+}
+
     /* --------------------------------------------contactanos --------------*/
 
 

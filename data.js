@@ -1,7 +1,7 @@
 const tratamientosdata = [ 
     {id: 1,
         name: "Plan Presencial Mensual",
-        category: "presencial",
+        category: "Presencial",
         price: 51700,
         consultas: 4,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
@@ -13,7 +13,7 @@ const tratamientosdata = [
     {
         id: 2,
         name: "Plan Presencial Trimestral",
-        category : "presencial",
+        category : "Presencial",
         price: 131900,
         consultas: 12,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
@@ -43,7 +43,7 @@ const tratamientosdata = [
     {
         id: 5,
         name: "Plan Online Mensual",
-        category: "online",
+        category: "virtual",
         price: 36500,
         consultas: 4,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
@@ -52,7 +52,7 @@ const tratamientosdata = [
     {
         id: 6,
         name: "Plan Online Trimestral",
-        category: "online",
+        category: "virtual",
         price: 93100,
         consultas: 12,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
@@ -61,7 +61,7 @@ const tratamientosdata = [
     {
         id: 7,
         name: "Plan Tgi Mensual",
-        category: "online",
+        category: "virtual",
         price: 19400,
         consultas: 1,
         prestaciones: [ "Grupos Educativos", "Actividad Fisica "],
@@ -70,7 +70,7 @@ const tratamientosdata = [
     {
         id: 8,
         name: "Plan Tgi Trimestral",
-        category: "online",
+        category: "virtual",
         price: 49500,
         consultas: 3,
         prestaciones:[ "Grupos Educativos", "Actividad Fisica "],
@@ -135,6 +135,6 @@ const appState ={
     tratamientos : dividetratamientosinparts(6),
     currentTratamientosIndex: 0,
     tratamientosLimit: dividetratamientosinparts(6).length,
-    activeFilter: null, 
+    activeFilter:null, 
 
 };

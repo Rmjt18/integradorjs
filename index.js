@@ -55,13 +55,35 @@ const showMoreTratamientos = () => {
     }
 };
 
+// ocultar ver mas si hay categoria selecionada
+
+
+const setshowmorevisibility= () => {
+    if(!appState.activeFilter){
+        showMoreBtn.classList.add("hidden");
+    }
+    showMoreBtn.classList.add("hidden")
+}
+
+
+
 
 // logica de filtros-------------------------
 
 // cambiar color de seleccion category
 const changeBtnActiveState = (selectedcategory) => {
     const categories =[...categorieslist]
-    console.log(selectedcategory)
+    console.log(appState)
+
+
+    categories.forEach((categorybtn) => {
+        if(categorybtn.dataset.category !== selectedcategory){
+            categorybtn.classList.remove("active");
+            return;
+
+        }
+        categorybtn.classList.add("active");
+    })
 
 
 
@@ -72,10 +94,18 @@ const changeBtnActiveState = (selectedcategory) => {
 const changeFilterstate = (btn) => {
 appState.activeFilter = btn.dataset.category;
 changeBtnActiveState(appState.activeFilter);
+setshowmorevisibility(appState.activeFilter);
 
 }
 
+// funcion para renderizar lo filtrado 
 
+const renderfilteredtratamientos= () => {
+
+    const filteredtratamientos= tratamientosdata.filter((tratamiento) => tratamiento.category === appState.activeFilter)
+
+    rendertratamientos(filteredtratamientos)
+}
 
 
 // Funcion para aplicar filtro
@@ -83,9 +113,15 @@ changeBtnActiveState(appState.activeFilter);
 
 const applyfilter = ({target}) => {
     if (!isInactiveFilterBtn(target)) return;
-    changeFilterstate(target)
+    changeFilterstate(target);
+    tratamientoscontainer.innerHTML = "";
+    if(appState.activeFilter){
+        renderfilteredtratamientos();
+        appState.currentTratamientosIndex=0;
+        return;
+    }
 
-}
+};
 
 // funcion para saber si el elemnto es un boton de categoria y no esta activo
 
