@@ -116,3 +116,25 @@ const tratamientosdata = [
     }
     
 ]
+
+// divido en dos mi array
+
+const dividetratamientosinparts= (size) => {
+    let tratamientolist =[];
+
+    for (let i = 0; i < tratamientosdata.length; i+= (size)){
+        tratamientolist.push(tratamientosdata.slice(i, i + size))
+
+    }
+    return tratamientolist;
+    
+};
+
+//appstate 
+const appState ={
+    tratamientos : dividetratamientosinparts(6),
+    currentTratamientosIndex: 0,
+    tratamientosLimit: dividetratamientosinparts(6).length,
+    activeFilter: null, 
+
+};

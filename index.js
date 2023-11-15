@@ -2,7 +2,17 @@
 
 const tratamientoscontainer= document.querySelector(".tratamientos-container");
 
-// funcion para crear el htl del tratamiento
+// boton ver mas
+const showMoreBtn = document.querySelector(".btn-load")
+
+// traemos cotainer de categories
+const categoriescontainer = document.querySelector(".categories")
+
+// traemos el html collection de todas las categorias
+const categorieslist= document.querySelectorAll(".category")
+
+
+// funcion para crear el html del tratamiento
 
 
 
@@ -32,11 +42,70 @@ const rendertratamientos = (tratamientoslist) => {
 
 };
 
+// // Logica ver mas tratamientos 
+
+const showMoreTratamientos = () => {
+    appState.currentTratamientosIndex +=1;
+
+    let {tratamientos, currentTratamientosIndex} = appState
+    rendertratamientos(tratamientos[currentTratamientosIndex]);
+
+    if (currentTratamientosIndex === appState.tratamientosLimit-1 ){
+        showMoreBtn.classList.add("hidden")
+    }
+};
+
+
+// logica de filtros-------------------------
+
+// cambiar color de seleccion category
+const changeBtnActiveState = (selectedcategory) => {
+    const categories =[...categorieslist]
+    console.log(selectedcategory)
+
+
+
+}
+
+// funcion para cambiar el estado del filtro activo 
+
+const changeFilterstate = (btn) => {
+appState.activeFilter = btn.dataset.category;
+changeBtnActiveState(appState.activeFilter);
+
+}
+
+
+
+
+// Funcion para aplicar filtro
+
+
+const applyfilter = ({target}) => {
+    if (!isInactiveFilterBtn(target)) return;
+    changeFilterstate(target)
+
+}
+
+// funcion para saber si el elemnto es un boton de categoria y no esta activo
+
+const isInactiveFilterBtn = (element) => {
+    return (element.classList.contains("category")  &&
+    !element.classList.contains("active"))
+}
+
+
+
+
+
 // funcion init
 const init = () => {
     // console.log (tratamientosdata)
-    rendertratamientos(tratamientosdata);
+    rendertratamientos(appState.tratamientos[0]);
+    showMoreBtn.addEventListener("click", showMoreTratamientos);
+    categoriescontainer.addEventListener("click", applyfilter)
+
 
 };
 
-init()
+init();
