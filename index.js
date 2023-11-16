@@ -3,13 +3,24 @@
 const tratamientoscontainer= document.querySelector(".tratamientos-container");
 
 // boton ver mas
-const showMoreBtn = document.querySelector(".btn-load")
+const showMoreBtn = document.querySelector(".btn-load");
 
 // traemos cotainer de categories
-const categoriescontainer = document.querySelector(".categories")
+const categoriescontainer = document.querySelector(".categories");
 
 // traemos el html collection de todas las categorias
 const categorieslist= document.querySelectorAll(".category")
+
+// Carrito
+const cartBtn = document.querySelector(".cart-label");
+// Boton para abrir y cerrar el menu
+const menuBtn = document.querySelector(".menu-label");
+// Carrito div
+const cartMenu = document.querySelector(".cart");
+// Menu (Hamburguesa)
+const barsMenu = document.querySelector(".nav-links");
+// Overlay
+const overlay = document.querySelector(".overlay");
 
 
 // funcion para crear el html del tratamiento
@@ -30,6 +41,7 @@ const {id, name, price, prestaciones, consultas, img,} = tratamiento;
         <div class="tratamiento__info--mid">
             <span>📌Prestaciones: ${prestaciones}</span>
             </div>
+            <button class="button-add"> Comprar </button>
     </div>
 
 </div>`
@@ -73,8 +85,7 @@ const setshowmorevisibility= () => {
 // cambiar color de seleccion category
 const changeBtnActiveState = (selectedcategory) => {
     const categories =[...categorieslist]
-    console.log(appState)
-
+    
 
     categories.forEach((categorybtn) => {
         if(categorybtn.dataset.category !== selectedcategory){
@@ -83,9 +94,7 @@ const changeBtnActiveState = (selectedcategory) => {
 
         }
         categorybtn.classList.add("active");
-    })
-
-
+    });
 
 }
 
@@ -131,7 +140,17 @@ const isInactiveFilterBtn = (element) => {
 }
 
 
+// logica de carrito------------------------------
+const toggleCart = () => {
+    cartMenu.classList.toggle("open-cart");
+    overlay.classList.toggle("show-overlay")
 
+};
+
+const toggleMenu= () => {
+    barsMenu.classList.toggle("open-menu");
+    overlay.classList.toggle("show-overlay")
+}
 
 
 // funcion init
@@ -139,7 +158,10 @@ const init = () => {
     // console.log (tratamientosdata)
     rendertratamientos(appState.tratamientos[0]);
     showMoreBtn.addEventListener("click", showMoreTratamientos);
-    categoriescontainer.addEventListener("click", applyfilter)
+    categoriescontainer.addEventListener("click", applyfilter);
+
+    cartBtn.addEventListener("click", toggleCart)
+    menuBtn,addEventListener("click" , toggleMenu) 
 
 
 };

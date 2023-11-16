@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/mediaqueris.css">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="animacion.css">
 </head>
 
 <body>
@@ -16,14 +17,41 @@
         <div class="logo">
             <img src="./img/logo cc.png" alt="logo clinica">
                 </div>
-                <nav>
+                <nav class="navbar">
+
+                    <div class="menu-label">
+                        <img src="./img/menudesglose.jpeg" alt="" class="menu-icon" />
+                    </div>
             <ul class="nav-links">
                 <li><a href="#hero">Inicio</a></li>
                 <li><a href="#nosotros">Nosotros</a></li>
                 <li><a href="#contacto">Contactanos</a></li>
                 <li><a href="#tratamientos">Tratamientos</a></li>
-                
+
+                <div class="cart-label">
+                    <i class="fa-solid fa-cart-shopping cart-icon">
+                    <div class="cart-bubble">0</div>
+                    </i>
+                </div>
+        
+                <div class="cart">
+                    <h2>Tus Tratamientos</h2>
+        
+                    <div class="cart-container"></div>
+        
+                    <span class="divider"></span>
+        
+                    <div class="cart-total">
+                    <p>Total:</p>
+                    <span class="total">18.3 ETH</span>
+                    </div>
+                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-delete">Vaciar carrito</button>
+                </div>
+        
+                <div class="overlay"></div>
             </ul>
+            
                 </nav>
     </header>
     <main>
