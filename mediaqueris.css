@@ -10,15 +10,15 @@
       border: 0px solid;
     }
   
-    .navbar-list {
+    .nav-links {
       position: absolute;
       top: 65px;
       left: 5%;
       right: 5%;
       width: 90%;
       flex-direction: column;
-      background-color: var(--nav-bg);
-      border: 2px solid var(--electric);
+      background: linear-gradient(to bottom,skyblue, rgb(5, 5, 87)  );
+      border: 2px solid yellowgreen;
       border-top: 0px;
       border-radius: 0px 0px 15px 15px;
       align-items: flex-start;
@@ -26,9 +26,13 @@
       gap: 25px;
       z-index: 2;
       display: none;
-    }
+      -webkit-border-radius: 0px 0px 15px 15px;
+      -moz-border-radius: 0px 0px 15px 15px;
+      -ms-border-radius: 0px 0px 15px 15px;
+      -o-border-radius: 0px 0px 15px 15px;
+}
   
-    .navbar-list a {
+    .nav-links a {
       font-size: 18px;
     }
   

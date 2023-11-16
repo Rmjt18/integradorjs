@@ -39,12 +39,12 @@
   }
   
   /*Hover de los elementos "a" del navbar*/
-  .navbar-list li {
+  .nav-links li {
     position: relative;
     padding: 0;
   }
   
-  .navbar-list li a::after {
+  .nav-links li a::after {
     content: "";
     height: 2px;
     width: 100%;
@@ -57,7 +57,7 @@
     transition: transform 0.15s ease;
   }
   
-  .navbar-list li a:hover::after {
+  .nav-links li a:hover::after {
     transform-origin: bottom left;
     transform: scaleX(1);
   }

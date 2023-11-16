@@ -143,12 +143,22 @@ const isInactiveFilterBtn = (element) => {
 // logica de carrito------------------------------
 const toggleCart = () => {
     cartMenu.classList.toggle("open-cart");
+    if (barsMenu.classList.contains("open-menu")){
+        barsMenu.classList.remove("open-menu");
+        return;
+
+    }
+
     overlay.classList.toggle("show-overlay")
 
 };
 
 const toggleMenu= () => {
     barsMenu.classList.toggle("open-menu");
+    if(cartMenu.classList.remove("open.cart")){
+        cartMenu.classList.remove("open-cart");
+    return;
+    }
     overlay.classList.toggle("show-overlay")
 }
 
