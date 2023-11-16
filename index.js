@@ -22,6 +22,16 @@ const barsMenu = document.querySelector(".nav-links");
 // Overlay
 const overlay = document.querySelector(".overlay");
 
+const cartBubble = document.querySelector(".cart-bubble");
+// Total del carrito
+const total = document.querySelector(".total");
+// Boton de comprar
+const buyBtn = document.querySelector(".btn-buy");
+// Boton para borrar
+const deleteBtn = document.querySelector(".btn-delete");
+// Cart container
+const tratamientosCart = document.querySelector(".cart-container");
+
 
 // funcion para crear el html del tratamiento
 
@@ -135,7 +145,7 @@ const applyfilter = ({target}) => {
 // funcion para saber si el elemnto es un boton de categoria y no esta activo
 
 const isInactiveFilterBtn = (element) => {
-    return (element.classList.contains("category")  &&
+    return (element.classList.contains("category") &&
     !element.classList.contains("active"))
 }
 
@@ -163,6 +173,33 @@ const toggleMenu= () => {
 }
 
 
+// funcion para cerrar el menu
+
+const closeOnOverLayClick= () => {
+    barsMenu.classList.remove("open-menu");
+    cartMenu.classList.remove("open-cart");
+    overlay.classList-remove("show-overlay");
+}
+
+// funcion para cerrar menues
+const closeOnScroll= () => {
+    if(barsMenu.classList.contains("open-menu") &&
+    cartMenu.classList.contains("open-menu")
+        )
+            return;
+        
+    barsMenu.classList.remove("open-menu");
+    cartMenu.classList.remove("open-cart");
+    overlay.classList-remove("show-overlay");
+
+}
+// logica carrito_________
+
+const addtratamiento= (e) => 
+console.log(e.target);
+if(!e.target.classList.contains(btn-add))return;
+console.log(e.target)
+
 // funcion init
 const init = () => {
     // console.log (tratamientosdata)
@@ -173,6 +210,8 @@ const init = () => {
     cartBtn.addEventListener("click", toggleCart)
     menuBtn,addEventListener("click" , toggleMenu) 
 
+    overlay.addEventListener("click" , closeOnOverLayClick)
+    window.addEventListener("scroll",closeOnScroll )
 
 };
 
