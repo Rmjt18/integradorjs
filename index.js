@@ -32,6 +32,9 @@ const deleteBtn = document.querySelector(".btn-delete");
 // Cart container
 const tratamientosCart = document.querySelector(".cart-container");
 
+// seteamos carro------------
+const cart=[]
+
 
 // funcion para crear el html del tratamiento
 
@@ -184,7 +187,7 @@ const closeOnOverLayClick= () => {
 // funcion para cerrar menues
 const closeOnScroll= () => {
     if(barsMenu.classList.contains("open-menu") &&
-    cartMenu.classList.contains("open-menu")
+    cartMenu.classList.contains("open-cart")
         )
             return;
         
@@ -209,7 +212,6 @@ const init = () => {
 
     cartBtn.addEventListener("click", toggleCart)
     menuBtn,addEventListener("click" , toggleMenu) 
-
     overlay.addEventListener("click" , closeOnOverLayClick)
     window.addEventListener("scroll",closeOnScroll )
 
