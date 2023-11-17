@@ -33,7 +33,7 @@ const deleteBtn = document.querySelector(".btn-delete");
 const tratamientosCart = document.querySelector(".cart-container");
 
 // seteamos carro------------
-const cart=[]
+let cart=[]
 
 
 // funcion para crear el html del tratamiento
@@ -54,7 +54,13 @@ const {id, name, price, prestaciones, consultas, img,} = tratamiento;
         <div class="tratamiento__info--mid">
             <span>📌Prestaciones: ${prestaciones}</span>
             </div>
-            <button class="button-add"> Comprar </button>
+            <button class="btn-add" 
+            data.id=${id}
+            data-name=${name}
+            data-img=${img}
+            data-price=${price}
+
+            > Comprar </button>
     </div>
 
 </div>`
@@ -193,15 +199,61 @@ const closeOnScroll= () => {
         
     barsMenu.classList.remove("open-menu");
     cartMenu.classList.remove("open-cart");
-    overlay.classList-remove("show-overlay");
+    overlay.classList.remove("show-overlay");
 
 }
 // logica carrito_________
 
-const addtratamiento= (e) => 
-console.log(e.target);
-if(!e.target.classList.contains("btn-add"))return;
-const product = e.target.dataset;
+// render carrito
+const renderCart= () => {
+    if (!cart.length){
+    tratamientosCart.innerHTML = `<p class="empty-msg"> Agrega un tratamiento  </p>`;
+        return;
+    }
+
+    alert("tuki");
+}
+
+const addtratamiento = (e) => {  
+    if (!e.target.classList.contains("btn-add")) return;
+const tratamiento = e.target.dataset;
+
+// if para verificar tratamientos que no este en el carrito
+if (isExistingCartTratamiento(tratamiento)){
+    addUnitToTratamiento(tratamiento)
+    
+} else{
+    createCartTratamiento(tratamiento);
+
+}
+
+renderCart()
+console.log(cart);
+
+};
+
+// funcion para agregar una unidad 
+const addUnitToTratamiento= (tratamiento) =>{
+    cart = cart.map((tratamientosCart) => 
+    tratamientosCart.id === tratamiento.id
+    ? {...tratamientosCart, quantity: tratamientosCart.quantity + 1}
+    :tratamientosCart
+    );
+
+}
+
+// funcion para saber si el tratamiento ya esta en e carro
+const isExistingCartTratamiento= (tratamiento) => {
+    return cart.find((item) => item.id === tratamiento.id);
+}
+// funcion para crear un objeto con la info del tratamiento para agregar al carro
+const createCartTratamiento= (tratamiento) => {
+    cart =[...cart, {...tratamiento, quantity: 1}];
+
+
+}
+
+
 
 // funcion init
 const init = () => {
@@ -213,7 +265,9 @@ const init = () => {
     cartBtn.addEventListener("click", toggleCart)
     menuBtn,addEventListener("click" , toggleMenu) 
     overlay.addEventListener("click" , closeOnOverLayClick)
-    window.addEventListener("scroll",closeOnScroll )
+    window.addEventListener("scroll",closeOnScroll );
+    tratamientoscontainer.addEventListener("click" , addtratamiento)
+    document.addEventListener("DOMContentLoaded", renderCart)
 
 };
 
