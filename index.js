@@ -32,13 +32,19 @@ const deleteBtn = document.querySelector(".btn-delete");
 // Cart container
 const tratamientosCart = document.querySelector(".cart-container");
 
-// seteamos carro------------
-let cart=[]
+const succesModal = document.querySelector(".add-modal")
 
+// seteamos carro------------
+let cart= JSON.parse(localStorage.getItem("cart")) || []
+
+// local storage---------------
+
+
+const saveCart=()=> {
+    localStorage.setItem('cart', JSON.stringify(cart))
+}
 
 // funcion para crear el html del tratamiento
-
-
 
 const createtratamientotemplate=  (tratamiento) => {
 const {id, name, price, prestaciones, consultas, img,} = tratamiento;
@@ -263,12 +269,13 @@ const disableBtn= (btn) => {
 // funcion para  ejecutar funciones de actualizacion del carro ------
 
 const updateCartState = () => {
+saveCart();
 renderCart();
 showCartTotal();
 renderCartBubble();
 disableBtn(buyBtn);
 disableBtn(deleteBtn);
-console.log(cart);
+
 }
 
 
@@ -278,10 +285,12 @@ const tratamiento = e.target.dataset;
 
 // if para verificar tratamientos que no este en el carrito
 if (isExistingCartTratamiento(tratamiento)){
-    addUnitToTratamiento(tratamiento)
+    addUnitToTratamiento(tratamiento);
+    showSuccesModal("Se Agrego Una Unidad Mas Producto")
     
 } else{
     createCartTratamiento(tratamiento);
+    showSuccesModal("Tratamiento Agregado")
 
 }
 updateCartState();
@@ -311,6 +320,17 @@ const createCartTratamiento= (tratamiento) => {
 
 }
 
+// funcion para mostar modal.----------
+const showSuccesModal= (msg) =>{
+    succesModal.classList.add("active-modal")
+    succesModal.textContent= msg
+
+    setTimeout(()=>{
+        succesModal.classList.remove("active-modal")
+    } ,2000)
+
+}
+
 // funcion agregar ____________
 
 const handlePLusBtnEvent= (id)=> {
@@ -323,7 +343,27 @@ const handlePLusBtnEvent= (id)=> {
 
 const handleMinusBtnEvent= (id) => {
     const existingCartTratamiento = cart.find(item => item.id === id)
-    addUnitToTratamiento(existingCartTratamiento)
+if (existingCartTratamiento.quantity === 1){
+    if(window.confirm("Deseas Borrar El Producto?")){
+    removeTratamientoFromCart(existingCartTratamiento)
+    }
+    return
+}
+
+    substractTratamientoUnit(existingCartTratamiento)
+
+}
+const substractTratamientoUnit = (existingCartTratamiento) => {
+    cart = cart.map((tratamiento) => {
+        return tratamiento.id === existingCartTratamiento.id
+        ? {...tratamiento, quantity: Number(tratamiento.quantity) -1 }
+        :tratamiento
+    })
+}
+
+const removeTratamientoFromCart = ( existingCartTratamiento) => {
+    cart = cart.filter((tratamiento) => tratamiento.id !== existingCartTratamiento.id)
+    updateCartState()
 }
 
 
@@ -335,13 +375,33 @@ const handleQuantity= (e)=> {
         handlePLusBtnEvent(e.target.dataset.id)
     }
     else if (e.target.classList.contains("down")){
-        handleMinusBtnEvent(e.target.dataser.id)
+        handleMinusBtnEvent(e.target.dataset.id)
     }
 
     updateCartState()
 }
 
+const resetCartItem= () => {
+    cart = []
+    updateCartState()
 
+}
+const completeCartAction = (confirmMsg, successMsg) =>
+{if (!cart.length) return
+    if (window.confirm(confirmMsg)){
+        resetCartItem()
+        alert(successMsg)
+    }
+}
+const completeBuy= ()=> {
+    completeCartAction ("Deseas Completar Tu Compra" , "Gracias Por Tu Compra")
+
+}
+
+const deleteCart = ()=> {
+    completeCartAction("Deseas Borrar EL Carro" , "No Hay Productos En El Carro")
+
+}
 
 // funcion init
 const init = () => {
@@ -357,9 +417,11 @@ const init = () => {
     tratamientoscontainer.addEventListener("click" , addtratamiento)
     tratamientosCart.addEventListener("click" , handleQuantity)
     document.addEventListener("DOMContentLoaded", renderCart)
-
+    buyBtn.addEventListener("click",  completeBuy)
+    buyBtn.addEventListener("click",  deleteCart)
     disableBtn(buyBtn)
     disableBtn(deleteBtn)
+    renderCartBubble(cart)
 
 };
 
