@@ -650,7 +650,7 @@ border-radius: 5px;
     color: royalblue;
     margin-right: 10px;
 }
-.container-form form .campo, textarea{
+.container-form form .name, textarea, .email , .phone {
     width: 100%;
     padding: 15px 10px;
     font-size: 16px;

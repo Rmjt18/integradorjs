@@ -66,7 +66,7 @@ const {id, name, price, prestaciones, consultas, img,} = tratamiento;
             data-img='${img}' 
             data-price='${price}' 
 
-            >  Add</button>
+            >  Agregar </button>
     </div>
 
 </div>`
