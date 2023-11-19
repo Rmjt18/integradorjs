@@ -260,6 +260,17 @@ const disableBtn= (btn) => {
     }
 };
 
+// funcion para  ejecutar funciones de actualizacion del carro ------
+
+const updateCartState = () => {
+renderCart();
+showCartTotal();
+renderCartBubble();
+disableBtn(buyBtn);
+disableBtn(deleteBtn);
+console.log(cart);
+}
+
 
 const addtratamiento = (e) => {  
     if (!e.target.classList.contains("btn-add")) return;
@@ -273,12 +284,7 @@ if (isExistingCartTratamiento(tratamiento)){
     createCartTratamiento(tratamiento);
 
 }
-
-renderCart();
-showCartTotal();
-renderCartBubble();
-disableBtn(buyBtn)
-disableBtn(deleteBtn)
+updateCartState();
 console.log(cart);
 
 };
@@ -293,6 +299,7 @@ const addUnitToTratamiento= (tratamiento) =>{
 
 }
 
+
 // funcion para saber si el tratamiento ya esta en e carro
 const isExistingCartTratamiento= (tratamiento) => {
     return cart.find((item) => item.id === tratamiento.id);
@@ -304,9 +311,35 @@ const createCartTratamiento= (tratamiento) => {
 
 }
 
+// funcion agregar ____________
+
+const handlePLusBtnEvent= (id)=> {
+    const existingCartTratamiento = cart.find(item => item.id === id)
+    addUnitToTratamiento(existingCartTratamiento)
+
+}
+
+// funcion para manejar le menos en el carrito 
+
+const handleMinusBtnEvent= (id) => {
+    const existingCartTratamiento = cart.find(item => item.id === id)
+    addUnitToTratamiento(existingCartTratamiento)
+}
+
+
 // funcionalidad de mas y menos 
 
-const 
+const handleQuantity= (e)=> {
+    if (e.target.classList.contains("up")){
+        console.log("tuki")
+        handlePLusBtnEvent(e.target.dataset.id)
+    }
+    else if (e.target.classList.contains("down")){
+        handleMinusBtnEvent(e.target.dataser.id)
+    }
+
+    updateCartState()
+}
 
 
 
@@ -322,6 +355,7 @@ const init = () => {
     overlay.addEventListener("click" , closeOnOverLayClick)
     window.addEventListener("scroll",closeOnScroll );
     tratamientoscontainer.addEventListener("click" , addtratamiento)
+    tratamientosCart.addEventListener("click" , handleQuantity)
     document.addEventListener("DOMContentLoaded", renderCart)
 
     disableBtn(buyBtn)
