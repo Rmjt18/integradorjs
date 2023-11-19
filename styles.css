@@ -650,7 +650,8 @@ border-radius: 5px;
     color: royalblue;
     margin-right: 10px;
 }
-.container-form form .name, textarea, .email , .phone {
+.container-form form , .name, textarea, .email , .phone {
+    
     width: 100%;
     padding: 15px 10px;
     font-size: 16px;
@@ -685,6 +686,30 @@ border-radius: 5px;
     
 }
 
+/* Error / Success */
+.form-field.error input {
+    border: 1px solid #dc3545;
+}
+
+.form-field small {
+    color: #dc3545;
+    max-width: 350px;
+    text-align: center;
+    display: none;
+}
+
+.form-field.success input {
+    border: 1px solid #28a745;
+}
+
+.form-field.error {
+    color: #dc3545;
+    font-size: 1rem;
+    margin: 8px 0px;
+    max-width: 350px;
+    text-align: center;
+}
+/* -------------------------------------- */
 footer{
     width: 100%;
     padding: 10px;
