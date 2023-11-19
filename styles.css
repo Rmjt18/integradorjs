@@ -574,8 +574,21 @@ border-radius: 5px;
 
 .active {
     background: linear-gradient(to bottom ,skyblue, rgb(5, 5, 87)  );
+
 }
 
+.disabled {
+    background-color: var(--text-gray);
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
+.disabled:hover {
+    background-color: var(--text-gray);
+    color: white;
+    cursor: not-allowed;
+    border: none;
+}
     /* --------------------------------------------contactanos --------------*/
 
 

@@ -55,12 +55,12 @@ const {id, name, price, prestaciones, consultas, img,} = tratamiento;
             <span>📌Prestaciones: ${prestaciones}</span>
             </div>
             <button class="btn-add" 
-            data.id=${id}
-            data-name=${name}
-            data-img=${img}
-            data-price=${price}
+            data-id='${id}' 
+            data-name='${name}' 
+            data-img='${img}' 
+            data-price='${price}' 
 
-            > Comprar </button>
+            >  Add</button>
     </div>
 
 </div>`
@@ -204,15 +204,62 @@ const closeOnScroll= () => {
 }
 // logica carrito_________
 
+// funcion para crear el template del producto en el carrito--------------------
+const createCartTratamientoTemplate= (tratamientosCart) => {
+    const {price, id, img, name, quantity} = tratamientosCart
+
+    return  `  <div class="cart-item">
+    <img src="${img}" class="${name}">
+    <div class="item-info">
+        <h3 class="item-title">${name}</h3>
+        <span class="item-price">${price}</span>
+
+        <div class="item-handler">
+            <span class="quantity-handler down" data-id=${id}>-</span>
+            <span class="item-quantity">${quantity}</span>
+            <span class="quantity-handler up" data-id=${id}>+</span>
+            </div>
+    </div>
+</div>`
+    
+}
+
 // render carrito
 const renderCart= () => {
     if (!cart.length){
     tratamientosCart.innerHTML = `<p class="empty-msg"> Agrega un tratamiento  </p>`;
         return;
     }
+    tratamientosCart.innerHTML = cart.map(createCartTratamientoTemplate).join('')
+};
 
-    alert("tuki");
+// funcion para totalizar compra 
+const getCartTotal =() => {
+    return cart.reduce((acc, cur) => acc + Number(cur.price) * cur.quantity ,0)
+
 }
+// funcion de Total----------------
+const showCartTotal= () =>{
+    total.innerHTML =`${getCartTotal().toFixed(0)} Pesos Argentinos`
+    
+}
+
+// actulizar bubuja 
+
+const renderCartBubble =() => {
+    cartBubble.textContent=cart.reduce((acc, cur)=> acc + cur.quantity ,0)
+
+}
+
+// habilitacion de botones
+const disableBtn= (btn) => {
+    if (!cart.length){ 
+        btn.classList.add(`disabled`)
+    } else { 
+        btn.classList.remove(`disabled`)
+    }
+};
+
 
 const addtratamiento = (e) => {  
     if (!e.target.classList.contains("btn-add")) return;
@@ -227,7 +274,11 @@ if (isExistingCartTratamiento(tratamiento)){
 
 }
 
-renderCart()
+renderCart();
+showCartTotal();
+renderCartBubble();
+disableBtn(buyBtn)
+disableBtn(deleteBtn)
 console.log(cart);
 
 };
@@ -253,6 +304,10 @@ const createCartTratamiento= (tratamiento) => {
 
 }
 
+// funcionalidad de mas y menos 
+
+const 
+
 
 
 // funcion init
@@ -268,6 +323,9 @@ const init = () => {
     window.addEventListener("scroll",closeOnScroll );
     tratamientoscontainer.addEventListener("click" , addtratamiento)
     document.addEventListener("DOMContentLoaded", renderCart)
+
+    disableBtn(buyBtn)
+    disableBtn(deleteBtn)
 
 };
 

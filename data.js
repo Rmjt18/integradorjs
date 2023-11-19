@@ -5,7 +5,7 @@ const tratamientosdata = [
         price: 51700,
         consultas: 4,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/Plan Presencial 1.jpg",
+        img: "/img/PlanPresencial1.jpg",
     
         
     },
@@ -17,7 +17,7 @@ const tratamientosdata = [
         price: 131900,
         consultas: 12,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/Presencial img.jpeg",
+        img: "/img/Presencialimg.jpeg",
     },
     
     {
@@ -27,7 +27,7 @@ const tratamientosdata = [
         price: 44500,
         consultas: 4,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/Plan Semi Presencial 1.jpg",
+        img: "/img/PlanSemiPresencial1.jpg",
     },
     
     {
@@ -37,7 +37,7 @@ const tratamientosdata = [
         price: 113500,
         consultas: 12,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/semipresencial img.png",
+        img: "/img/semipresencialimg.png",
     },
     
     {
@@ -47,7 +47,7 @@ const tratamientosdata = [
         price: 36500,
         consultas: 4,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/Plan Distancia 1.jpg",
+        img: "/img/PlanDistancia1.jpg",
     },
     {
         id: 6,
@@ -56,7 +56,7 @@ const tratamientosdata = [
         price: 93100,
         consultas: 12,
         prestaciones: ["Medico", "Nutricion", "Psicologo", "Grupos Educativos", "Actividad Fisica "],
-        img: "/img/Plan a DISTANCIA 1.jpg",
+        img: "/img/PlanaDISTANCIA1.jpg",
     },
     {
         id: 7,
@@ -65,7 +65,7 @@ const tratamientosdata = [
         price: 19400,
         consultas: 1,
         prestaciones: [ "Grupos Educativos", "Actividad Fisica "],
-        img: "./img/tgi a.jpeg",
+        img: "./img/tgia.jpeg",
     },
     {
         id: 8,
@@ -74,7 +74,7 @@ const tratamientosdata = [
         price: 49500,
         consultas: 3,
         prestaciones:[ "Grupos Educativos", "Actividad Fisica "],
-        img: "./img/tgi b.jpg",
+        img: "./img/tgib.jpg",
     },
     
     {
