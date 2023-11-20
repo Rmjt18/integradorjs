@@ -14,13 +14,28 @@ const  isBetween= (input, min, max ) => {
 return input.value.length >= min && input.value.length <= max;
 }
 
+// ERROR--------------
 const showError = (input, message) => {
     const formField= input.parentElement;
+    formField.classList.remove("success")
     formField.classList.add("error")
-    console.log(formField);
+    const error = formField.querySelector("small")
+    error.style.display= "block"
+    error.textContent = message;
 
 }
 
+// TODO OK--------------
+
+const showSuccess = (input) => {
+    const formField = input.parentElement;
+    formField.classList.remove("error");
+    formField.classList.add("success");
+    
+    const error = formField.querySelector("small")
+    error.textContent = "";
+
+};
 
 
 
@@ -29,7 +44,9 @@ const checkInput = (input) => {
 //cpdifo a checkear 
 // console.log( "empty" + isEmpty(input));
 // console.log( "largo" + isBetween(input, 3 , 25));
-console.log(showError(nameInput))
+// console.log(showError(input, "Completa Correctamente el campo"))
+showSuccess(input);
+
 }
 
 

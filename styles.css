@@ -702,7 +702,7 @@ border-radius: 5px;
     border: 1px solid #28a745;
 }
 
-.form-field.error {
+.form-field .error {
     color: #dc3545;
     font-size: 1rem;
     margin: 8px 0px;
