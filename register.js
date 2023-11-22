@@ -41,12 +41,24 @@ const showSuccess = (input) => {
 
 
 const checkInput = (input) => {
-//cpdifo a checkear 
-// console.log( "empty" + isEmpty(input));
-// console.log( "largo" + isBetween(input, 3 , 25));
-// console.log(showError(input, "Completa Correctamente el campo"))
-showSuccess(input);
+    // que vamos a ckekear
 
+    const MINCHARACTERS = 3;
+    const MAXCHARACTERS = 26 ;
+
+    console.log(isBetween(input , 3 , 25 ));
+
+    if (isEmpty(input)){
+        showError(input, "Este Campo es Obligatorio ");
+        return
+    
+    }
+
+    if( !isBetween(input, MINCHARACTERS, MAXCHARACTERS)){
+        showError(input, `Este Campo Debe Tener entre ${MINCHARACTERS} Y ${MAXCHARACTERS} caracteres`)
+return
+    }
+showSuccess(input)
 }
 
 
