@@ -3,13 +3,23 @@
     /*header*/
   
     .navbar {
-      gap: 10px;
+      gap: 5px;
     }
   
     .cart-icon {
       border: 0px solid;
     }
   
+header{
+  width: 76%;  
+    /* height: 65px;
+    
+    z-index: 999;
+    position: fixed;
+    margin: 0 auto; */
+
+
+}
     .nav-links {
       position: absolute;
       top: 65px;
@@ -55,6 +65,11 @@
     /*Se van a superponer el cart y el menu si se abren juntos, eso lo solucionaremos en el modulo de js*/
   
     /*Hero*/
+
+  #hero {
+    width: 50%;
+
+    }
   
     .hero-info {
       width: 100%;

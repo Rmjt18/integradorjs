@@ -418,7 +418,7 @@ const init = () => {
     tratamientosCart.addEventListener("click" , handleQuantity)
     document.addEventListener("DOMContentLoaded", renderCart)
     buyBtn.addEventListener("click",  completeBuy)
-    buyBtn.addEventListener("click",  deleteCart)
+    deleteBtn.addEventListener("click",  deleteCart)
     disableBtn(buyBtn)
     disableBtn(deleteBtn)
     renderCartBubble(cart)
