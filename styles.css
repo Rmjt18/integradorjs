@@ -671,7 +671,7 @@ border-radius: 5px;
     min-height: 140px;
     max-height: 150px;
 }
-.container-form .btn-enviar{
+.container-form {
     padding: 15px;
     font-size: 16px;
     border: none;
@@ -682,6 +682,28 @@ border-radius: 5px;
     cursor: pointer;
     transition: all 300ms ease;
 }
+
+.btn-enviar{
+        background: #12c2e9;
+        /*background: -webkit-linear-gradient(135deg, #cb5eee 0%, #4be1ec 100%);
+        background: linear-gradient(135deg, #cb5eee 0%, #4be1ec 100%);
+        */color: white;
+        font-weight: 600;
+        padding: auto;
+        text-transform: uppercase;
+        border-radius:5px;
+        5-webkit-border-radius:;
+        -moz-border-radius:5px;
+        -ms-border-radius:5px;
+        -o-border-radius:5px;
+        -webkit-border-radius:5px;
+}
+    
+    .btn-enviar :hover {
+        background: -webkit-linear-gradient(135deg, #c149e9 0%, #2bc7d2 100%);
+        background: linear-gradient(135deg, #c149e9 0%, #2bc7d2 100%);
+    }
+
 .container-form .btn-enviar:hover{
     background: #e39403;
 }
