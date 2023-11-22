@@ -42,6 +42,7 @@ const showSuccess = (input) => {
 
 const checkInput = (input) => {
     // que vamos a ckekear
+    let valid = false;
 
     const MINCHARACTERS = 3;
     const MAXCHARACTERS = 26 ;
@@ -59,6 +60,8 @@ const checkInput = (input) => {
 return
     }
 showSuccess(input)
+valid = true
+return valid;
 }
 
 
