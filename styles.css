@@ -685,28 +685,27 @@ border-radius: 5px;
 }
 
 .btn-enviar{
-        background: #12c2e9;
-        /*background: -webkit-linear-gradient(135deg, #cb5eee 0%, #4be1ec 100%);
-        background: linear-gradient(135deg, #cb5eee 0%, #4be1ec 100%);
-        */color: white;
+    cursor: pointer;
+        background: black;
+        color: white;
         font-weight: 600;
-        padding: auto;
-        text-transform: uppercase;
+        padding: 3px;
+        text-transform: uppercase; 
         border-radius:5px;
-        5-webkit-border-radius:;
         -moz-border-radius:5px;
         -ms-border-radius:5px;
         -o-border-radius:5px;
         -webkit-border-radius:5px;
 }
     
-    .btn-enviar :hover {
-        background: -webkit-linear-gradient(135deg, #c149e9 0%, #2bc7d2 100%);
-        background: linear-gradient(135deg, #c149e9 0%, #2bc7d2 100%);
+    .btn-enviar:hover {
+    transform: scale(1.2);
+    transition: all 0, 3s;
+
     }
 
 .container-form .btn-enviar:hover{
-    background: #e39403;
+    background: #e39403; 
 }
 .container-form img{ 
     width:50%;
