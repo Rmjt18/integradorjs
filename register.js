@@ -165,6 +165,7 @@ const validateForm = (e) => {
     alert("Recibimos tu mensaje, nos contactaremos a la brevedad ");
     window.location.href = "index.html";
     }
+    console.log(alert)
 };
 
 

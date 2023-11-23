@@ -18,15 +18,15 @@
     --bg-white: #fff;
     --bg-electric: #f0fbff;
     --nav-bg: #0f1525;
-  
+
     /* Text colors */
     --text-gray: #adb9c7;
     --text-white: #f3f4f6;
-  
+
     /* Decoration */
     --fire: #ff6d00;
     --electric: #64d3ff;
-  }
+}
 .navbar{
     display: flex;
 align-items: center;
@@ -116,7 +116,7 @@ header{
     }
     
       /* MENU HAMBURGUESA  */
-     
+    
     .menu-label {
         display: none; 
     } 
@@ -323,6 +323,7 @@ cursor: pointer;
     transform: translateY(0);
     transition: all 0.5s ease-in;
 }
+
 
 #hero{
 
@@ -778,19 +779,19 @@ footer img:hover {
  * animation fade-in
  * ----------------------------------------
  */
- @-webkit-keyframes fade-in {
+@-webkit-keyframes fade-in {
     0% {
-      opacity: 0;
+    opacity: 0;
     }
     100% {
-      opacity: 1;
+    opacity: 1;
     }
-  }
-  @keyframes fade-in {
+}
+@keyframes fade-in {
     0% {
-      opacity: 0;
+    opacity: 0;
     }
     100% {
-      opacity: 1;
+    opacity: 1;
     }
-  }
+}

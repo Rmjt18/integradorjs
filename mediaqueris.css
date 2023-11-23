@@ -11,16 +11,55 @@
     }
   
 header{
-  width: 76%;  
-    /* height: 65px;
-    
-    z-index: 999;
-    position: fixed;
-    margin: 0 auto; */
-
+  width: 65%;  
 
 }
-    .nav-links {
+main{
+  width: 65%;  
+}
+
+.slider img{
+  width: 52%;
+
+  }
+  
+  
+#nosotros {
+
+  display: block;
+  gap: 1rem;
+}
+
+.nosotros-card img{ 
+  display: none;
+}
+
+.info-container{
+  flex-direction: column;
+  width: 90%;
+
+}
+
+.container--card{
+  padding: 0px, 40px;
+
+}
+.tratamiento-card{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+.tratamiento__info{
+  display: flex;
+  flex-direction: column;
+
+}
+
+footer{
+  width: 65%;
+}
+
+.nav-links {
       position: absolute;
       top: 65px;
       left: 5%;
@@ -62,37 +101,15 @@ header{
       display: flex;
     }
   
+    
+
+
     /*Se van a superponer el cart y el menu si se abren juntos, eso lo solucionaremos en el modulo de js*/
   
     /*Hero*/
 
-  #hero {
-    width: 50%;
+    
 
-    }
-  
-    .hero-info {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      gap: 30px;
-    }
-  
-    .hero-info h1 {
-      width: 90%;
-      max-width: 500px;
-      min-width: unset; /*Quitamos el min-width dado para desktop*/
-    }
-  
-    .hero-info p {
-      width: 60%;
-      max-width: 600px;
-    }
-  
-    .hero-card {
-      display: none;
-    }
   
     /*info*/
     #info h2 {
