@@ -56,7 +56,7 @@ main{
 }
 
 footer{
-  width: 65%;
+  width: 64%;
 }
 
 .nav-links {
@@ -101,7 +101,15 @@ footer{
       display: flex;
     }
   
+    #contacto{
     
+      width: 98%;
+
+    }
+
+    #contacto img{
+      width: 175px;
+    }
 
 
     /*Se van a superponer el cart y el menu si se abren juntos, eso lo solucionaremos en el modulo de js*/
@@ -154,3 +162,55 @@ footer{
     }
   }
   
+/* celular  */
+
+@media (max-width: 576px){
+
+
+#hero .semipresencial,  .presencial ,.online{
+display: none;
+}
+
+#hero .ccee{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+#nosotros h1{
+  font-size: 70px;
+}
+
+.tratamiento-card{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tratamiento__info{
+  width: 100%;
+  
+}
+#contacto{
+  width: 100%;
+  gap: 0rem;
+}
+#contacto img{
+  display: none;
+}
+
+footer{
+  width: 68%;
+  justify-content: center;
+}
+
+footer img {
+  width: 17%;
+}
+.form-field {
+  padding: auto;
+
+}
+
+}
