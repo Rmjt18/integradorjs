@@ -193,7 +193,7 @@ const toggleMenu= () => {
 const closeOnOverLayClick= () => {
     barsMenu.classList.remove("open-menu");
     cartMenu.classList.remove("open-cart");
-    overlay.classList-remove("show-overlay");
+    overlay.classList.remove("show-overlay");
 }
 
 // funcion para cerrar menues
