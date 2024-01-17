@@ -627,6 +627,7 @@ border-radius: 5px;
     max-width: 1200px;
     margin: auto;
     display: flex;
+    flex-direction: column;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 50px;
     margin-top: 90px;
